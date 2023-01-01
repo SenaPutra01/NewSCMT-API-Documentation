@@ -1,0 +1,1665 @@
+openapi: 3.0.0
+info:
+  title: New SCMT API Documentation
+  description: The API for the New SCMT Project
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+- url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+tags:
+- name: API EAI
+- name: Technician Atrribute
+- name: Integrasi Technician
+- name: NTE
+paths:
+  /apiTechAttr/update:
+    put:
+      tags:
+      - API EAI
+      summary: attr-update
+      operationId: attr-update
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/apiTechAttr_update_body'
+            example:
+              apiWHRequest:
+                eaiHeader:
+                  internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+                  externalId: "123"
+                  timestamp: 2022-03-29 14:54:45.351
+                  responseTimestamp: 2022-03-29 16:12:10.593
+                eaiBody:
+                  technician_code: TECH2022
+                  description: TAMMY C
+                  value: 10
+                  location_attr_preset_id: 10
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: APIEAI
+  /apiTechAttr/delete/90000041:
+    delete:
+      tags:
+      - API EAI
+      summary: attr-delete
+      operationId: attr-delete
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: APIEAI
+  /insert:
+    post:
+      tags:
+      - API EAI
+      summary: attr-insert
+      operationId: attr-insert
+      parameters:
+      - name: Postman-Token
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: <calculate when request is sent>
+      - name: Host
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: <calculate when request is sent>
+      - name: User-Agent
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: PostmanRuntime
+      - name: Accept
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: '*/*'
+      - name: Accept-Encoding
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: "gzip, gflate, br"
+      - name: Connection
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: keep-alive
+      - name: X-Auth
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDAsInVzZXJuYW1lIjoibmlybWEiLCJwYXNzd29yZCI6IjRlYmJhODhlMzllMDE2OWZkNGM4MjBlNjgzNDYxZDU1NDcyN2U0Y2MiLCJmdWxsbmFtZSI6Ik5pcm1hIEFpbnVuICIsImVtYWlsX2FkZHJlc3MiOiJuaXJtYWxhLmFpbnVuLm5hQGdtYWlsIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDMtMTBUMTA6MjM6NDMuMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIxLTA1LTExVDEyOjU2OjM5LjAwMFoiLCJpc19hY3RpdmUiOjEsInRlbGVncmFtX2lkIjoiNzQ0MDgwMDE0IiwidGVsZWdyYW1fb3RwIjoiNzI2ODIwIiwidGVsZWdyYW1fZGF0ZSI6IjIwMjEtMDMtMTBUMDA6MDA6MDAuMDAwWiIsInRlbGVncmFtX2NvZGUiOm51bGwsImFjdGl2ZV9yZWFzb24iOm51bGwsImxhc3RfbG9naW4iOiIyMDIyLTAzLTMwVDE2OjIzOjI3LjAwMFoiLCJkZWxldGVkX2F0IjpudWxsLCJyZXNldF9vdHAiOm51bGwsImJ1c2luZXNzX3VuaXRfaWQiOjEsIndhcmVob3VzZV9pZCI6NTAzOCwiZGV2aWNlX2lkIjpudWxsLCJ0b2tlbl9maXJlYmFzZSI6bnVsbCwidXNlcl90eXBlIjoiIiwic3VwcGxpZXJzX2lkIjpudWxsLCJmYWlsZWRfbG9naW4iOjAsIm90cF9kYXRlIjoiMjAyMi0wNC0xOVQwODozNDowMy4wMDBaIiwiY3JlYXRlZF9ieSI6bnVsbCwidXBkYXRlZF9ieSI6bnVsbCwic2NoZW1lX2xvZ2luIjoidm91Y2hlciIsImlhdCI6MTY1MDM0MjYxNywiZXhwIjoxNjUwMzQ2MjE3fQ.HbvFQYhqt-wJY3wOx7OWoaOyLRUOychqOVg7PN2lhqY
+      - name: Content-Length
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: <calculate when request is sent>
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/insert_body'
+            example:
+              apiWHRequest:
+                eaiHeader:
+                  internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+                  externalId: "123"
+                  timestamp: 2022-03-29 14:54:45.351
+                  responseTimestamp: 2022-03-29 16:12:10.593
+                eaiBody:
+                  technician_code: TECH2022001
+                  description: Request To Warehouse
+                  value: WH TR Regional 7
+                  location_attr_preset_id: 95
+                  location_id_ref: 0
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.telkom.co.id/apiTechAttr
+      x-swagger-router-controller: APIEAI
+  /getAccessToken:
+    post:
+      tags:
+      - API EAI
+      summary: getToken
+      operationId: getToken
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getAccessToken_body'
+            example:
+              grant_type: client_credentials
+              client_id: 615b9aef-c066-4a41-a915-6475d60cab6d
+              client_secret: bc9ffa0d-0244-43e7-8586-df6809188a8a
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: APIEAI
+  /technician-attribute/delete:
+    delete:
+      tags:
+      - Technician Atrribute
+      summary: delete-arr
+      operationId: delete-arr
+      parameters:
+      - name: Content-Type
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: application/json
+          enum:
+          - application/json
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: TechnicianAtrribute
+  /technician-attribute/delete/90000054:
+    delete:
+      tags:
+      - Technician Atrribute
+      summary: delete
+      operationId: delete
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: TechnicianAtrribute
+  /technician-attribute/update:
+    put:
+      tags:
+      - Technician Atrribute
+      summary: update-arr
+      operationId: update-arr
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/technicianattribute_update_body'
+            example:
+              technician_code: "201112345"
+              attributes:
+              - id: 717403732
+                description: Tipe
+                location_attr_preset_id: 124
+                value: ABC & AFG
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: TechnicianAtrribute
+  /technician-attribute/insert:
+    post:
+      tags:
+      - Technician Atrribute
+      summary: insert-arr
+      operationId: insert-arr
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/technicianattribute_insert_body'
+            example:
+              technician_code: "201112345"
+              attributes:
+              - description: Tipe
+                location_attr_preset_id: 124
+                value: ABC & EFG
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: TechnicianAtrribute
+  /tech-inactive/TECHTES2212022:
+    put:
+      tags:
+      - Integrasi Technician
+      summary: inactive
+      operationId: inactive
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /check-sb/98160163:
+    get:
+      tags:
+      - Integrasi Technician
+      summary: check-sb
+      operationId: check-sb
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /check-ktp/TECHTES2212022:
+    get:
+      tags:
+      - Integrasi Technician
+      summary: check-ktp
+      operationId: check-ktp
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /newscmt-int-api/nte-assignment:
+    post:
+      tags:
+      - Integrasi Technician
+      summary: integrasi-api
+      operationId: integrasi-api
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newscmtintapi_nteassignment_body'
+            example:
+              transid: "9274691"
+              laborCode: "16011194"
+              devices:
+              - type: STB
+                brand: ZTE
+                serialNumber: 4B100499007042400000FC449F2F95E7
+              - type: STB
+                brand: ZTE
+                serialNumber: E2100499007042400000FC449F2EC5DF
+              - type: ONT
+                brand: ZTE
+                serialNumber: ZTEGCD995B9D
+              - type: ONT
+                brand: ZTE
+                serialNumber: ZTEGCD995BA0
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /technician-integrasi/update:
+    put:
+      tags:
+      - Integrasi Technician
+      summary: update
+      operationId: update
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/technicianintegrasi_update_body'
+            example:
+              technician_code: "201112345"
+              name: NIRMA AINUN
+              capacity: 10
+              safety_stock: 10
+              reg_location_id: 3
+              location_status: available
+              attributes:
+              - id: "277286777"
+                description: STO
+                value: RCK
+                location_attr_preset_id: 100
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /location/insert-parent-cust:
+    post:
+      tags:
+      - Integrasi Technician
+      summary: insert-cust-installasi
+      operationId: insert-cust-installasi
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/location_insertparentcust_body'
+            example:
+              location_code: "20221999"
+              external_code: "20221999"
+              description: TestInstall-NEWm
+              safety_stock: 10
+              capacity: 10
+              type_location_id: 1
+              reg_location_id: 2
+              latitude: -89.13795
+              longitude: 112.81481
+              location_status: available
+              created_by: 310
+              details:
+              - description: Workzone
+                value: DEPOK / BOGOR / REG-2 (DEP)
+                location_attr_preset_id: 101
+                location_id_ref: 272
+              sid_details:
+              - sid: "112388889999123"
+                sid_description: inet
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /technician-integrasi/insert:
+    post:
+      tags:
+      - Integrasi Technician
+      summary: insert
+      operationId: insert
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/technicianintegrasi_insert_body'
+            example:
+              technician_code: TEST_TECH
+              name: MOCHAMAD ABDUL AZIZ
+              safety_stock: 1
+              capacity: 10
+              reg_location_id: "3"
+              location_status: available
+              attributes:
+              - description: Flagging_Technician
+                location_attr_preset_id: 224
+                value: Non Multisektor
+                location_id_ref: 0
+              - description: KTP
+                location_attr_preset_id: 265
+                value: "1234543123145698"
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /technician-integrasi/201112345:
+    get:
+      tags:
+      - Integrasi Technician
+      summary: findById
+      operationId: findById
+      parameters:
+      - name: Content-Type
+        in: header
+        description: ""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: application/json
+          enum:
+          - application/json
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://warehouse-management-dev-ext-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: IntegrasiTechnician
+  /stock-list/technician/TEST_TECH/MYTECH:
+    get:
+      tags:
+      - NTE
+      summary: Technician Stock List
+      operationId: TechnicianStockList
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: NTE
+  /MYTECH:
+    get:
+      tags:
+      - NTE
+      summary: NTE Query
+      operationId: NTEQuery
+      parameters: []
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://item-management-dev-int-new-scmt.apps.mypaas.telkom.co.id/item/by-serial-number/ZTEATV42401679883
+      x-swagger-router-controller: NTE
+  /service/asset-management/install_dismantle:
+    post:
+      tags:
+      - NTE
+      summary: Installation NTE & BYOD
+      operationId: InstallationNTE&BYOD
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/assetmanagement_install_dismantle_body'
+            example:
+              trc_type: 1
+              technician_code: TEST_TECH
+              location_name: TEST_USER_7
+              location_code: TEST_USER_7
+              location_address: 'Kampung GUNUNG SUMPING  Kecamatan PELABUHANRATU KABUPATEN
+                SUKABUMI 43364  '
+              location_segment: DCS - UCS III
+              service_ord_id: 623191_v7
+              workzone: SII
+              service_id: 131633104485_v7
+              external_order_number: 131633104485-623191_v9
+              items:
+              - number: FHTT99AD5728
+                type: serial_number
+              creator: ext007
+              caller: MYTECH
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      security:
+      - bearer: []
+      servers:
+      - url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: NTE
+  /newscmt-int-api/approve-nte:
+    post:
+      tags:
+      - NTE
+      summary: Approval NTE MYTECH
+      operationId: ApprovalNTEMYTECH
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newscmtintapi_approvente_body'
+            example:
+              transaction_number: 77101012
+              approved_user: ext007
+              caller: MYTECH
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: NTE
+  /newscmt-int-api/replace-nte:
+    post:
+      tags:
+      - NTE
+      summary: Replace NTE MYTECH
+      operationId: ReplaceNTEMYTECH
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newscmtintapi_replacente_body'
+            example:
+              ext_order_no: tes-new-scmt-prod
+              technician_code: TEST_TECH
+              service_id: "111601132773"
+              old_serial_number: ZTEATV42401679883
+              new_serial_number: ZTEATV42401746115
+              caller: MYTECH
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: NTE
+  /sales-order-garantee/insert:
+    post:
+      tags:
+      - NTE
+      summary: Sales Order Guarantee
+      operationId: SalesOrderGuarantee
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/salesordergarantee_insert_body'
+            example:
+              serial_number: ZTEATV42401746115
+              location_code: TEST_TECH
+              start_date_garantee: 2022-10-12 17:00:00.000
+              end_date_garantee: 2024-10-12 17:00:00.000
+              created_by: 2644
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: NTE
+  /newscmt-int-api/reject-nte:
+    post:
+      tags:
+      - NTE
+      summary: Reject NTE MYTECH
+      operationId: RejectNTEMYTECH
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newscmtintapi_rejectnte_body'
+            example:
+              transaction_number: 77100692
+              rejected_user: ext007
+              caller: MYTECH
+        required: true
+      responses:
+        "200":
+          description: ""
+      deprecated: false
+      servers:
+      - url: https://asset-management-dev-int-new-scmt.apps.mypaas.telkom.co.id
+      x-swagger-router-controller: NTE
+components:
+  schemas:
+    attr-update-request:
+      title: attr-update-request
+      required:
+      - apiWHRequest
+      type: object
+      properties:
+        apiWHRequest:
+          $ref: '#/components/schemas/ApiWHRequest'
+      example:
+        apiWHRequest:
+          eaiHeader:
+            internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+            externalId: "123"
+            timestamp: 2022-03-29 14:54:45.351
+            responseTimestamp: 2022-03-29 16:12:10.593
+          eaiBody:
+            technician_code: TECH2022
+            description: TAMMY C
+            value: 10
+            location_attr_preset_id: 10
+    ApiWHRequest:
+      title: ApiWHRequest
+      required:
+      - eaiBody
+      - eaiHeader
+      type: object
+      properties:
+        eaiHeader:
+          $ref: '#/components/schemas/EaiHeader'
+        eaiBody:
+          $ref: '#/components/schemas/EaiBody'
+      example:
+        eaiHeader:
+          internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+          externalId: "123"
+          timestamp: 2022-03-29 14:54:45.351
+          responseTimestamp: 2022-03-29 16:12:10.593
+        eaiBody:
+          technician_code: TECH2022
+          description: TAMMY C
+          value: 10
+          location_attr_preset_id: 10
+    EaiHeader:
+      title: EaiHeader
+      required:
+      - externalId
+      - internalId
+      - responseTimestamp
+      - timestamp
+      type: object
+      properties:
+        internalId:
+          type: string
+        externalId:
+          type: string
+        timestamp:
+          type: string
+        responseTimestamp:
+          type: string
+      example:
+        internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+        externalId: "123"
+        timestamp: 2022-03-29 14:54:45.351
+        responseTimestamp: 2022-03-29 16:12:10.593
+    EaiBody:
+      title: EaiBody
+      required:
+      - description
+      - location_attr_preset_id
+      - technician_code
+      - value
+      type: object
+      properties:
+        technician_code:
+          type: string
+        description:
+          type: string
+        value:
+          type: integer
+          format: int32
+        location_attr_preset_id:
+          type: integer
+          format: int32
+      example:
+        technician_code: TECH2022
+        description: TAMMY C
+        value: 10
+        location_attr_preset_id: 10
+    attr-insert-request:
+      title: attr-insert-request
+      required:
+      - apiWHRequest
+      type: object
+      properties:
+        apiWHRequest:
+          $ref: '#/components/schemas/ApiWHRequest1'
+      example:
+        apiWHRequest:
+          eaiHeader:
+            internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+            externalId: "123"
+            timestamp: 2022-03-29 14:54:45.351
+            responseTimestamp: 2022-03-29 16:12:10.593
+          eaiBody:
+            technician_code: TECH2022001
+            description: Request To Warehouse
+            value: WH TR Regional 7
+            location_attr_preset_id: 95
+            location_id_ref: 0
+    ApiWHRequest1:
+      title: ApiWHRequest1
+      required:
+      - eaiBody
+      - eaiHeader
+      type: object
+      properties:
+        eaiHeader:
+          $ref: '#/components/schemas/EaiHeader'
+        eaiBody:
+          $ref: '#/components/schemas/EaiBody1'
+      example:
+        eaiHeader:
+          internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+          externalId: "123"
+          timestamp: 2022-03-29 14:54:45.351
+          responseTimestamp: 2022-03-29 16:12:10.593
+        eaiBody:
+          technician_code: TECH2022001
+          description: Request To Warehouse
+          value: WH TR Regional 7
+          location_attr_preset_id: 95
+          location_id_ref: 0
+    EaiBody1:
+      title: EaiBody1
+      required:
+      - description
+      - location_attr_preset_id
+      - location_id_ref
+      - technician_code
+      - value
+      type: object
+      properties:
+        technician_code:
+          type: string
+        description:
+          type: string
+        value:
+          type: string
+        location_attr_preset_id:
+          type: integer
+          format: int32
+        location_id_ref:
+          type: integer
+          format: int32
+      example:
+        technician_code: TECH2022001
+        description: Request To Warehouse
+        value: WH TR Regional 7
+        location_attr_preset_id: 95
+        location_id_ref: 0
+    getTokenRequest:
+      title: getTokenRequest
+      required:
+      - client_id
+      - client_secret
+      - grant_type
+      type: object
+      properties:
+        grant_type:
+          type: string
+        client_id:
+          type: string
+        client_secret:
+          type: string
+      example:
+        grant_type: client_credentials
+        client_id: 615b9aef-c066-4a41-a915-6475d60cab6d
+        client_secret: bc9ffa0d-0244-43e7-8586-df6809188a8a
+    delete-arr-request:
+      title: delete-arr-request
+      required:
+      - attributes
+      - technician_code
+      type: object
+      properties:
+        technician_code:
+          type: string
+        attributes:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Attribute'
+      example:
+        technician_code: "20111234"
+        attributes:
+        - id: "717403732"
+    Attribute:
+      title: Attribute
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          type: string
+      example:
+        id: "717403732"
+    update-arr-request:
+      title: update-arr-request
+      required:
+      - attributes
+      - technician_code
+      type: object
+      properties:
+        technician_code:
+          type: string
+        attributes:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Attribute1'
+      example:
+        technician_code: "201112345"
+        attributes:
+        - id: 717403732
+          description: Tipe
+          location_attr_preset_id: 124
+          value: ABC & AFG
+    Attribute1:
+      title: Attribute1
+      required:
+      - description
+      - id
+      - location_attr_preset_id
+      - value
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        description:
+          type: string
+        location_attr_preset_id:
+          type: integer
+          format: int32
+        value:
+          type: string
+      example:
+        id: 717403732
+        description: Tipe
+        location_attr_preset_id: 124
+        value: ABC & AFG
+    insert-arr-request:
+      title: insert-arr-request
+      required:
+      - attributes
+      - technician_code
+      type: object
+      properties:
+        technician_code:
+          type: string
+        attributes:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Attribute2'
+      example:
+        technician_code: "201112345"
+        attributes:
+        - description: Tipe
+          location_attr_preset_id: 124
+          value: ABC & EFG
+    Attribute2:
+      title: Attribute2
+      required:
+      - description
+      - location_attr_preset_id
+      - value
+      type: object
+      properties:
+        description:
+          type: string
+        location_attr_preset_id:
+          type: integer
+          format: int32
+        value:
+          type: string
+      example:
+        description: Tipe
+        location_attr_preset_id: 124
+        value: ABC & EFG
+    integrasi-api-request:
+      title: integrasi-api-request
+      required:
+      - devices
+      - laborCode
+      - transid
+      type: object
+      properties:
+        transid:
+          type: string
+        laborCode:
+          type: string
+        devices:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Device'
+      example:
+        transid: "9274691"
+        laborCode: "16011194"
+        devices:
+        - type: STB
+          brand: ZTE
+          serialNumber: 4B100499007042400000FC449F2F95E7
+        - type: STB
+          brand: ZTE
+          serialNumber: E2100499007042400000FC449F2EC5DF
+        - type: ONT
+          brand: ZTE
+          serialNumber: ZTEGCD995B9D
+        - type: ONT
+          brand: ZTE
+          serialNumber: ZTEGCD995BA0
+    Device:
+      title: Device
+      required:
+      - brand
+      - serialNumber
+      - type
+      type: object
+      properties:
+        type:
+          type: string
+        brand:
+          type: string
+        serialNumber:
+          type: string
+      example:
+        type: STB
+        brand: ZTE
+        serialNumber: 4B100499007042400000FC449F2F95E7
+    updaterequest:
+      title: updaterequest
+      required:
+      - attributes
+      - capacity
+      - latitude
+      - location_status
+      - longitude
+      - name
+      - parent_location_id
+      - reg_location_id
+      - safety_stock
+      - technician_code
+      type: object
+      properties:
+        technician_code:
+          type: string
+        name:
+          type: string
+        capacity:
+          type: integer
+          format: int32
+        safety_stock:
+          type: integer
+          format: int32
+        parent_location_id:
+          type: string
+          nullable: true
+        reg_location_id:
+          type: integer
+          format: int32
+        latitude:
+          type: string
+          nullable: true
+        longitude:
+          type: string
+          nullable: true
+        location_status:
+          type: string
+        attributes:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Attribute3'
+      example:
+        technician_code: "201112345"
+        name: NIRMA AINUN
+        capacity: 10
+        safety_stock: 10
+        reg_location_id: 3
+        location_status: available
+        attributes:
+        - id: "277286777"
+          description: STO
+          value: RCK
+          location_attr_preset_id: 100
+    Attribute3:
+      title: Attribute3
+      required:
+      - description
+      - id
+      - location_attr_preset_id
+      - value
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        value:
+          type: string
+        location_attr_preset_id:
+          type: integer
+          format: int32
+      example:
+        id: "277286777"
+        description: STO
+        value: RCK
+        location_attr_preset_id: 100
+    insert-cust-installasi-request:
+      title: insert-cust-installasi-request
+      required:
+      - capacity
+      - created_by
+      - description
+      - details
+      - external_code
+      - latitude
+      - location_code
+      - location_status
+      - longitude
+      - reg_location_id
+      - safety_stock
+      - sid_details
+      - type_location_id
+      type: object
+      properties:
+        location_code:
+          type: string
+        external_code:
+          type: string
+        description:
+          type: string
+        safety_stock:
+          type: integer
+          format: int32
+        capacity:
+          type: integer
+          format: int32
+        type_location_id:
+          type: integer
+          format: int32
+        reg_location_id:
+          type: integer
+          format: int32
+        latitude:
+          type: number
+        longitude:
+          type: number
+        location_status:
+          type: string
+        created_by:
+          type: integer
+          format: int32
+        details:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Detail'
+        sid_details:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/SidDetail'
+      example:
+        location_code: "20221999"
+        external_code: "20221999"
+        description: TestInstall-NEWm
+        safety_stock: 10
+        capacity: 10
+        type_location_id: 1
+        reg_location_id: 2
+        latitude: -89.13795
+        longitude: 112.81481
+        location_status: available
+        created_by: 310
+        details:
+        - description: Workzone
+          value: DEPOK / BOGOR / REG-2 (DEP)
+          location_attr_preset_id: 101
+          location_id_ref: 272
+        sid_details:
+        - sid: "112388889999123"
+          sid_description: inet
+    Detail:
+      title: Detail
+      required:
+      - description
+      - location_attr_preset_id
+      - location_id_ref
+      - value
+      type: object
+      properties:
+        description:
+          type: string
+        value:
+          type: string
+        location_attr_preset_id:
+          type: integer
+          format: int32
+        location_id_ref:
+          type: integer
+          format: int32
+      example:
+        description: Workzone
+        value: DEPOK / BOGOR / REG-2 (DEP)
+        location_attr_preset_id: 101
+        location_id_ref: 272
+    SidDetail:
+      title: SidDetail
+      required:
+      - sid
+      - sid_description
+      type: object
+      properties:
+        sid:
+          type: string
+        sid_description:
+          type: string
+      example:
+        sid: "112388889999123"
+        sid_description: inet
+    insertrequest:
+      title: insertrequest
+      required:
+      - attributes
+      - capacity
+      - latitude
+      - location_status
+      - longitude
+      - name
+      - parent_location_id
+      - reg_location_id
+      - safety_stock
+      - technician_code
+      type: object
+      properties:
+        technician_code:
+          type: string
+        name:
+          type: string
+        safety_stock:
+          type: integer
+          format: int32
+        capacity:
+          type: integer
+          format: int32
+        parent_location_id:
+          type: string
+          nullable: true
+        reg_location_id:
+          type: string
+        latitude:
+          type: string
+          nullable: true
+        longitude:
+          type: string
+          nullable: true
+        location_status:
+          type: string
+        attributes:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Attribute4'
+      example:
+        technician_code: TEST_TECH
+        name: MOCHAMAD ABDUL AZIZ
+        safety_stock: 1
+        capacity: 10
+        reg_location_id: "3"
+        location_status: available
+        attributes:
+        - description: Flagging_Technician
+          location_attr_preset_id: 224
+          value: Non Multisektor
+          location_id_ref: 0
+        - description: KTP
+          location_attr_preset_id: 265
+          value: "1234543123145698"
+    Attribute4:
+      title: Attribute4
+      required:
+      - description
+      - location_attr_preset_id
+      - value
+      type: object
+      properties:
+        description:
+          type: string
+        location_attr_preset_id:
+          type: integer
+          format: int32
+        value:
+          type: string
+        location_id_ref:
+          type: integer
+          format: int32
+      example:
+        description: Flagging_Technician
+        location_attr_preset_id: 224
+        value: Non Multisektor
+        location_id_ref: 0
+    InstallationNTEBYODRequest:
+      title: InstallationNTEBYODRequest
+      required:
+      - caller
+      - creator
+      - external_order_number
+      - items
+      - latitude
+      - location_address
+      - location_code
+      - location_name
+      - location_segment
+      - longitude
+      - regional
+      - service_id
+      - service_ord_id
+      - technician_code
+      - trc_type
+      - workzone
+      type: object
+      properties:
+        trc_type:
+          type: integer
+          format: int32
+        technician_code:
+          type: string
+        location_name:
+          type: string
+        location_code:
+          type: string
+        location_address:
+          type: string
+        location_segment:
+          type: string
+        service_ord_id:
+          type: string
+        workzone:
+          type: string
+        service_id:
+          type: string
+        regional:
+          type: string
+          nullable: true
+        latitude:
+          type: string
+          nullable: true
+        longitude:
+          type: string
+          nullable: true
+        external_order_number:
+          type: string
+        items:
+          type: array
+          description: ""
+          items:
+            $ref: '#/components/schemas/Item'
+        creator:
+          type: string
+        caller:
+          type: string
+      example:
+        trc_type: 1
+        technician_code: TEST_TECH
+        location_name: TEST_USER_7
+        location_code: TEST_USER_7
+        location_address: 'Kampung GUNUNG SUMPING  Kecamatan PELABUHANRATU KABUPATEN
+          SUKABUMI 43364  '
+        location_segment: DCS - UCS III
+        service_ord_id: 623191_v7
+        workzone: SII
+        service_id: 131633104485_v7
+        external_order_number: 131633104485-623191_v9
+        items:
+        - number: FHTT99AD5728
+          type: serial_number
+        creator: ext007
+        caller: MYTECH
+    Item:
+      title: Item
+      required:
+      - number
+      - type
+      type: object
+      properties:
+        number:
+          type: string
+        type:
+          type: string
+      example:
+        number: FHTT99AD5728
+        type: serial_number
+    ApprovalNTEMYTECHRequest:
+      title: ApprovalNTEMYTECHRequest
+      required:
+      - approved_user
+      - caller
+      - transaction_number
+      type: object
+      properties:
+        transaction_number:
+          type: integer
+          format: int32
+        approved_user:
+          type: string
+        caller:
+          type: string
+      example:
+        transaction_number: 77101012
+        approved_user: ext007
+        caller: MYTECH
+    ReplaceNTEMYTECHRequest:
+      title: ReplaceNTEMYTECHRequest
+      required:
+      - caller
+      - ext_order_no
+      - new_serial_number
+      - old_serial_number
+      - service_id
+      - technician_code
+      type: object
+      properties:
+        ext_order_no:
+          type: string
+        technician_code:
+          type: string
+        service_id:
+          type: string
+        old_serial_number:
+          type: string
+        new_serial_number:
+          type: string
+        caller:
+          type: string
+      example:
+        ext_order_no: tes-new-scmt-prod
+        technician_code: TEST_TECH
+        service_id: "111601132773"
+        old_serial_number: ZTEATV42401679883
+        new_serial_number: ZTEATV42401746115
+        caller: MYTECH
+    SalesOrderGuaranteeRequest:
+      title: SalesOrderGuaranteeRequest
+      required:
+      - created_by
+      - end_date_garantee
+      - location_code
+      - serial_number
+      - start_date_garantee
+      type: object
+      properties:
+        serial_number:
+          type: string
+        location_code:
+          type: string
+        start_date_garantee:
+          type: string
+        end_date_garantee:
+          type: string
+        created_by:
+          type: integer
+          format: int32
+      example:
+        serial_number: ZTEATV42401746115
+        location_code: TEST_TECH
+        start_date_garantee: 2022-10-12 17:00:00.000
+        end_date_garantee: 2024-10-12 17:00:00.000
+        created_by: 2644
+    RejectNTEMYTECHRequest:
+      title: RejectNTEMYTECHRequest
+      required:
+      - caller
+      - rejected_user
+      - transaction_number
+      type: object
+      properties:
+        transaction_number:
+          type: integer
+          format: int32
+        rejected_user:
+          type: string
+        caller:
+          type: string
+      example:
+        transaction_number: 77100692
+        rejected_user: ext007
+        caller: MYTECH
+    apiTechAttr_update_body:
+      allOf:
+      - $ref: '#/components/schemas/attr-update-request'
+      - example:
+          apiWHRequest:
+            eaiHeader:
+              internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+              externalId: "123"
+              timestamp: 2022-03-29 14:54:45.351
+              responseTimestamp: 2022-03-29 16:12:10.593
+            eaiBody:
+              technician_code: TECH2022
+              description: TAMMY C
+              value: 10
+              location_attr_preset_id: 10
+    insert_body:
+      allOf:
+      - $ref: '#/components/schemas/attr-insert-request'
+      - example:
+          apiWHRequest:
+            eaiHeader:
+              internalId: 3e017abe-fec0-44cc-81d9-5f128844e593
+              externalId: "123"
+              timestamp: 2022-03-29 14:54:45.351
+              responseTimestamp: 2022-03-29 16:12:10.593
+            eaiBody:
+              technician_code: TECH2022001
+              description: Request To Warehouse
+              value: WH TR Regional 7
+              location_attr_preset_id: 95
+              location_id_ref: 0
+    getAccessToken_body:
+      allOf:
+      - $ref: '#/components/schemas/getTokenRequest'
+      - example:
+          grant_type: client_credentials
+          client_id: 615b9aef-c066-4a41-a915-6475d60cab6d
+          client_secret: bc9ffa0d-0244-43e7-8586-df6809188a8a
+    technicianattribute_update_body:
+      allOf:
+      - $ref: '#/components/schemas/update-arr-request'
+      - example:
+          technician_code: "201112345"
+          attributes:
+          - id: 717403732
+            description: Tipe
+            location_attr_preset_id: 124
+            value: ABC & AFG
+    technicianattribute_insert_body:
+      allOf:
+      - $ref: '#/components/schemas/insert-arr-request'
+      - example:
+          technician_code: "201112345"
+          attributes:
+          - description: Tipe
+            location_attr_preset_id: 124
+            value: ABC & EFG
+    newscmtintapi_nteassignment_body:
+      allOf:
+      - $ref: '#/components/schemas/integrasi-api-request'
+      - example:
+          transid: "9274691"
+          laborCode: "16011194"
+          devices:
+          - type: STB
+            brand: ZTE
+            serialNumber: 4B100499007042400000FC449F2F95E7
+          - type: STB
+            brand: ZTE
+            serialNumber: E2100499007042400000FC449F2EC5DF
+          - type: ONT
+            brand: ZTE
+            serialNumber: ZTEGCD995B9D
+          - type: ONT
+            brand: ZTE
+            serialNumber: ZTEGCD995BA0
+    technicianintegrasi_update_body:
+      allOf:
+      - $ref: '#/components/schemas/updaterequest'
+      - example:
+          technician_code: "201112345"
+          name: NIRMA AINUN
+          capacity: 10
+          safety_stock: 10
+          reg_location_id: 3
+          location_status: available
+          attributes:
+          - id: "277286777"
+            description: STO
+            value: RCK
+            location_attr_preset_id: 100
+    location_insertparentcust_body:
+      allOf:
+      - $ref: '#/components/schemas/insert-cust-installasi-request'
+      - example:
+          location_code: "20221999"
+          external_code: "20221999"
+          description: TestInstall-NEWm
+          safety_stock: 10
+          capacity: 10
+          type_location_id: 1
+          reg_location_id: 2
+          latitude: -89.13795
+          longitude: 112.81481
+          location_status: available
+          created_by: 310
+          details:
+          - description: Workzone
+            value: DEPOK / BOGOR / REG-2 (DEP)
+            location_attr_preset_id: 101
+            location_id_ref: 272
+          sid_details:
+          - sid: "112388889999123"
+            sid_description: inet
+    technicianintegrasi_insert_body:
+      allOf:
+      - $ref: '#/components/schemas/insertrequest'
+      - example:
+          technician_code: TEST_TECH
+          name: MOCHAMAD ABDUL AZIZ
+          safety_stock: 1
+          capacity: 10
+          reg_location_id: "3"
+          location_status: available
+          attributes:
+          - description: Flagging_Technician
+            location_attr_preset_id: 224
+            value: Non Multisektor
+            location_id_ref: 0
+          - description: KTP
+            location_attr_preset_id: 265
+            value: "1234543123145698"
+    assetmanagement_install_dismantle_body:
+      allOf:
+      - $ref: '#/components/schemas/InstallationNTEBYODRequest'
+      - example:
+          trc_type: 1
+          technician_code: TEST_TECH
+          location_name: TEST_USER_7
+          location_code: TEST_USER_7
+          location_address: 'Kampung GUNUNG SUMPING  Kecamatan PELABUHANRATU KABUPATEN
+            SUKABUMI 43364  '
+          location_segment: DCS - UCS III
+          service_ord_id: 623191_v7
+          workzone: SII
+          service_id: 131633104485_v7
+          external_order_number: 131633104485-623191_v9
+          items:
+          - number: FHTT99AD5728
+            type: serial_number
+          creator: ext007
+          caller: MYTECH
+    newscmtintapi_approvente_body:
+      allOf:
+      - $ref: '#/components/schemas/ApprovalNTEMYTECHRequest'
+      - example:
+          transaction_number: 77101012
+          approved_user: ext007
+          caller: MYTECH
+    newscmtintapi_replacente_body:
+      allOf:
+      - $ref: '#/components/schemas/ReplaceNTEMYTECHRequest'
+      - example:
+          ext_order_no: tes-new-scmt-prod
+          technician_code: TEST_TECH
+          service_id: "111601132773"
+          old_serial_number: ZTEATV42401679883
+          new_serial_number: ZTEATV42401746115
+          caller: MYTECH
+    salesordergarantee_insert_body:
+      allOf:
+      - $ref: '#/components/schemas/SalesOrderGuaranteeRequest'
+      - example:
+          serial_number: ZTEATV42401746115
+          location_code: TEST_TECH
+          start_date_garantee: 2022-10-12 17:00:00.000
+          end_date_garantee: 2024-10-12 17:00:00.000
+          created_by: 2644
+    newscmtintapi_rejectnte_body:
+      allOf:
+      - $ref: '#/components/schemas/RejectNTEMYTECHRequest'
+      - example:
+          transaction_number: 77100692
+          rejected_user: ext007
+          caller: MYTECH
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
